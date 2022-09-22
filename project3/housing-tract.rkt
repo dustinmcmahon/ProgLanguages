@@ -12,7 +12,11 @@
 ;create a house 3 stories high with a roof(equalateral triangle grey)
 ;takes 5 param
 ;width,height/floor,floor-1-color,floor-2-color,floor-3-color
-( define ( house width floor-height floor-1-color floor-2-color floor-3-color ) ( above ( triangle width 'solid 'grey ) ( rectangle width floor-height 'solid floor-3-color ) ( rectangle width floor-height 'solid floor-2-color ) ( rectangle width floor-height 'solid floor-1-color ) ) )
+( define ( house width floor-height floor-1-color floor-2-color floor-3-color )
+   ( above ( triangle width 'solid 'grey )
+           ( rectangle width floor-height 'solid floor-3-color )
+           ( rectangle width floor-height 'solid floor-2-color )
+           ( rectangle width floor-height 'solid floor-1-color ) ) )
 
 ;track function
 ;
@@ -27,15 +31,15 @@
    ( define color-3 ( random-color ) )
    ( beside
      ( house house-width floor-height color-1 color-2 color-3 )
-     ( rectangle house-width floor-height 'solid 'white )
+     ( rectangle 10 floor-height 'solid 'white )
      ( house house-width floor-height color-1 color-3 color-2 )
-     ( rectangle house-width floor-height 'solid 'white )
+     ( rectangle 10 floor-height 'solid 'white )
      ( house house-width floor-height color-2 color-1 color-3 )
-     ( rectangle house-width floor-height 'solid 'white )
+     ( rectangle 10 floor-height 'solid 'white )
      ( house house-width floor-height color-2 color-3 color-1 )
-     ( rectangle house-width floor-height 'solid 'white )
+     ( rectangle 10 floor-height 'solid 'white )
      ( house house-width floor-height color-3 color-1 color-2 )
-     ( rectangle house-width floor-height 'solid 'white )
+     ( rectangle 10 floor-height 'solid 'white )
      ( house house-width floor-height color-3 color-2 color-1 )
    )
 )
