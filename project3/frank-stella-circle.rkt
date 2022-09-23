@@ -37,7 +37,9 @@
    ( cond
       ( ( = from to ) ( outlined-circle radius ( random-color ) ) )
       ( else
-        ( overlay ( outlined-circle radius ( random-color ) ) ( paint-nested-circle-random ( + from 1 ) to unit ) )
+        ( overlay
+          ( outlined-circle radius ( random-color ) )
+          ( paint-nested-circle-random ( + from 1 ) to unit ) )
       )
    )
 )

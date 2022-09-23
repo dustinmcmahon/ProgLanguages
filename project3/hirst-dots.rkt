@@ -27,7 +27,10 @@
 ( define ( hirst-rectangle row column )
    ( cond
       ( ( = row 1 ) ( hirst-row column ) )
-      ( else ( above ( hirst-row column ) ( square 20 'solid 'white ) ( hirst-rectangle ( - row 1 ) column ) ) )
+      ( else ( above
+               ( hirst-row column )
+               ( square 20 'solid 'white )
+               ( hirst-rectangle ( - row 1 ) column ) ) )
    )
 )
 
