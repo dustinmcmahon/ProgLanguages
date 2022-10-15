@@ -4,11 +4,11 @@
 ( define width 1000 )
 ( define black-background ( rectangle ( + 10 width ) ( + 10 height ) 'solid 'black ) )
 ;colors
-( define star-color-1 ( color ( random 50 ) ( random 50 ) ( random 50 ) ) )
-( define star-color-2 ( color ( random 50 ) ( random 50 ) ( random 50 ) ) )
-( define star-color-3 ( color ( random 50 ) ( random 50 ) ( random 50 ) ) )
-( define star-color-4 ( color ( random 50 ) ( random 50 ) ( random 50 ) ) )
-( define star-color-5 ( color ( random 50 ) ( random 50 ) ( random 50 ) ) )
+( define star-color-1 ( color ( + ( random 10 ) 20 ) ( random 50 ) ( random 50 ) ) )
+( define star-color-2 ( color ( random 50 ) ( + ( random 10 ) 20 ) ( random 50 ) ) )
+( define star-color-3 ( color ( random 50 ) ( random 50 ) ( + ( random 10 ) 20 ) ) )
+( define star-color-4 ( color ( + ( random 10 ) 20 ) ( + ( random 10 ) 20 ) ( random 50 ) ) )
+( define star-color-5 ( color ( random 50 ) ( + ( random 10 ) 20 ) ( + ( random 10 ) 20 ) ) )
 ( define ( get-star-color x)
    ( cond
       ( ( = x 0 ) star-color-1 )
@@ -20,11 +20,11 @@
 )
 
 ;sizes
-( define star-size-1 ( + 1 ( random 15 ) ) )
-( define star-size-2 ( + 1 ( random 15 ) ) )
-( define star-size-3 ( + 1 ( random 15 ) ) )
-( define star-size-4 ( + 1 ( random 15 ) ) )
-( define star-size-5 ( + 1 ( random 15 ) ) )
+( define star-size-1 ( + 10 ( random 15 ) ) )
+( define star-size-2 ( + 10 ( random 15 ) ) )
+( define star-size-3 ( + 10 ( random 15 ) ) )
+( define star-size-4 ( + 10 ( random 15 ) ) )
+( define star-size-5 ( + 10 ( random 15 ) ) )
 ( define ( get-star-size x)
    ( cond
       ( ( = x 0 ) star-size-1 )
@@ -53,13 +53,33 @@
       ( else
         ( define loc ( random 4 ) )
         ( cond
-           ( ( = loc 0 ) ( overlay/offset ( star ) ( random ( / width 2 ) ) ( random ( / height 2 ) ) ( place-star ( + 1 i ) total ) ) )
-           ( ( = loc 1 ) ( overlay/offset ( star ) ( * -1 ( random ( / width 2 ) ) ) ( random ( / height 2 ) ) ( place-star ( + 1 i ) total ) ) )
-           ( ( = loc 2 ) ( overlay/offset ( star ) ( random ( / width 2 ) ) ( * -1 ( random ( / height 2 ) ) ) ( place-star ( + 1 i ) total ) ) )
-           ( ( = loc 3 ) ( overlay/offset ( star ) ( * -1 ( random ( / width 2 ) ) ) ( * -1 ( random ( / height 2 ) ) ) ( place-star ( + 1 i ) total ) ) )
+           ( ( = loc 0 )
+             ( overlay/offset
+               ( star )
+               ( random ( / width 2 ) )
+               ( random ( / height 2 ) )
+               ( place-star ( + 1 i ) total ) ) )
+           ( ( = loc 1 )
+             ( overlay/offset
+               ( star )
+               ( * -1 ( random ( / width 2 ) ) )
+               ( random ( / height 2 ) )
+               ( place-star ( + 1 i ) total ) ) )
+           ( ( = loc 2 )
+             ( overlay/offset
+               ( star )
+               ( random ( / width 2 ) )
+               ( * -1 ( random ( / height 2 ) ) )
+               ( place-star ( + 1 i ) total ) ) )
+           ( ( = loc 3 )
+             ( overlay/offset
+               ( star )
+               ( * -1 ( random ( / width 2 ) ) )
+               ( * -1 ( random ( / height 2 ) ) )
+               ( place-star ( + 1 i ) total ) ) )
         )
       )
    )
 )
 
-( define ( my-image ) ( place-star 0 ( * ( random 1000 ) 10 ) ) )
+( define ( my-image ) ( place-star 0 ( * ( random 100 ) 10 ) ) )
