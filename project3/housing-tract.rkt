@@ -22,7 +22,7 @@
 ;
 ;creates 6 houses side by side, with the 6 different ways you can put 3 colors in order(permutation)
 ;takes 2 param
-;width of the entire tract, height or 3 floors
+;width of the entire tract, height of 3 floors
 ( define ( tract width height )
    ( define floor-height ( / height 3 ) )
    ( define house-width ( / width 11 ) )
