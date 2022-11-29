@@ -1,4 +1,4 @@
-# Prolog Project #1
+# Prolog Project #7
 - Various Computations using Prolog
 
 ## Task List
